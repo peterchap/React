@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "name": "domain-lookup-nextjs",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "app/api/**": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}
